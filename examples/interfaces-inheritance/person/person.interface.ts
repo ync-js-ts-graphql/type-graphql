@@ -1,4 +1,4 @@
-import { InterfaceType, Field, Int, ID, Arg } from "../../../src";
+import { InterfaceType, Field, Int, ID, Arg } from "type-graphql";
 
 import { IResource } from "../resource/resource.interface";
 
@@ -11,13 +11,23 @@ export abstract class IPerson implements IResource {
   id: string;
 
   @Field()
-  name: string;
+  firstName: string;
+
+  @Field()
+  lastName: string;
 
   @Field(type => Int)
   age: number;
 
   @Field()
-  avatar(@Arg("size") size: number): string {
+  fullName(): string {
+    return `${this.firstName} ${this.lastName}`;
+  }
+
+  @Field()
+  avatar(
+    @Arg("size") size: number,
+    @Arg("format") format: string): string {
     throw new Error("Method not implemented.");
   }
 }

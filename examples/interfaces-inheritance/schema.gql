@@ -10,21 +10,28 @@ scalar DateTime
 
 type Employee implements IPerson {
   age: Int!
+  avatar(size: Float!): String!
   companyName: String!
+  firstName: String!
+  fullName: String!
   id: ID!
-  name: String!
+  lastName: String!
 }
 
 input EmployeeInput {
   companyName: String!
   dateOfBirth: DateTime!
-  name: String!
+  firstName: String!
+  lastName: String!
 }
 
 interface IPerson {
   age: Int!
+  avatar(size: Float!): String!
+  firstName: String!
+  fullName: String!
   id: ID!
-  name: String!
+  lastName: String!
 }
 
 type Mutation {
@@ -34,8 +41,11 @@ type Mutation {
 
 type Person implements IPerson {
   age: Int!
+  avatar(size: Float!): String!
+  firstName: String!
+  fullName: String!
   id: ID!
-  name: String!
+  lastName: String!
 }
 
 type Query {
@@ -44,13 +54,17 @@ type Query {
 
 type Student implements IPerson {
   age: Int!
+  avatar(size: Float!): String!
+  firstName: String!
+  fullName: String!
   id: ID!
-  name: String!
+  lastName: String!
   universityName: String!
 }
 
 input StudentInput {
   dateOfBirth: DateTime!
-  name: String!
+  firstName: String!
+  lastName: String!
   universityName: String!
 }

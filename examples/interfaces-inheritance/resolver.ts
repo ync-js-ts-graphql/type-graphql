@@ -1,4 +1,4 @@
-import { Resolver, Query, Arg, Mutation } from "../../src";
+import { Resolver, Query, Arg, Mutation } from "type-graphql";
 
 import { getId, calculateAge } from "./helpers";
 import { Student } from "./student/student.type";
@@ -23,7 +23,8 @@ export class MultiResolver {
     // be sure to create real instances of classes
     const student = Object.assign(new Student(), {
       id: getId(),
-      name: input.name,
+      firstName: input.firstName,
+      lastName: input.lastName,
       universityName: input.universityName,
       age: calculateAge(input.dateOfBirth),
     });
@@ -35,7 +36,8 @@ export class MultiResolver {
   addEmployee(@Arg("input") input: EmployeeInput): Employee {
     const employee = Object.assign(new Employee(), {
       id: getId(),
-      name: input.name,
+      firstName: input.firstName,
+      lastName: input.lastName,
       companyName: input.companyName,
       age: calculateAge(input.dateOfBirth),
     });

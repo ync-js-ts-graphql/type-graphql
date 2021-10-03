@@ -1,9 +1,12 @@
-import { InputType, Field } from "../../../src";
+import { InputType, Field } from "type-graphql";
 
 @InputType()
 export class PersonInput {
   @Field()
-  name: string;
+  firstName: string;
+
+  @Field()
+  lastName: string;
 
   @Field()
   dateOfBirth: Date;
