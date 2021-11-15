@@ -17,7 +17,7 @@
     "verify": "npm run check && npm run lint",
     "package": "gulp package",
     "docs": "npm run --prefix website start",
-    "postinstall": "node ./dist/postinstall || exit 0"
+    "postinstall": "node ./build/dist/postinstall || exit 0"
   },
   "peerDependencies": {
     "class-validator": ">=0.12.0",
