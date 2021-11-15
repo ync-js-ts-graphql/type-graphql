@@ -1,5 +1,7 @@
 ---
 title: Bootstrapping
+id: version-1.2.0-rc.1-bootstrap
+original_id: bootstrap
 ---
 
 After creating our resolvers, type classes, and other business-related code, we need to make our app run. First we have to build the schema, then we can expose it with an HTTP server, WebSockets or even MQTT.
@@ -142,7 +144,7 @@ const stateLink = withClientState({
 There's also a sync version of it - `buildTypeDefsAndResolversSync`:
 
 ```typescript
-const { typeDefs, resolvers } = buildTypeDefsAndResolversSync({
+const { typeDefs, resolvers } = buildTypeDefsAndResolvers({
   resolvers: [FirstResolver, SecondResolver],
 });
 ```

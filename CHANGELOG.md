@@ -2,6 +2,10 @@
 
 ## Unreleased
 <!-- here goes all the unreleased changes descriptions -->
+### Fixes
+- support overwriting fields of extended types (#1109)
+
+## v1.2.0-rc.1
 ### Features
 - **Breaking Change**: `AuthChecker` type is now "function or class" - update to `AuthCheckerFn` if the function form is needed in the code
 - support class-based auth checker, which allows for dependency injection
